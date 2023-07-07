@@ -1,12 +1,20 @@
+/*
+ * @Author: niezihao 1332421989@qq.com
+ * @Date: 2023-07-07 09:40:35
+ * @LastEditors: niezihao 1332421989@qq.com
+ * @LastEditTime: 2023-07-07 17:17:48
+ * @FilePath: \file_upload_serve\app.js
+ */
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const router = require('./src/routers/index')
+const config = require('./config')
 
 // 创建 app 实例
 const app = express()
 
-app.use('/public/', express.static('./public/'))
+app.use(config.staticPath, express.static(`.${config.staticPath}`))
 
 // 开启跨域支持
 app.use(cors())
@@ -18,6 +26,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use('/user', router)
 
 // 开启监听服务
-app.listen('3001', () => {
-  console.log('express serve running at http://localhost:3001');
+app.listen(config.post, () => {
+  console.log(`express serve running at http://localhost:${config.post}`);
 })
