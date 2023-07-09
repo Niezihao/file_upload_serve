@@ -1,8 +1,8 @@
 /*
  * @Author: niezihao 1332421989@qq.com
  * @Date: 2023-07-07 09:40:35
- * @LastEditors: niezihao 1332421989@qq.com
- * @LastEditTime: 2023-07-07 17:17:48
+ * @LastEditors: Niezihao 1332421989@qq.com
+ * @LastEditTime: 2023-07-08 12:30:08
  * @FilePath: \file_upload_serve\app.js
  */
 const express = require('express')
@@ -27,5 +27,5 @@ app.use('/user', router)
 
 // 开启监听服务
 app.listen(config.post, () => {
-  console.log(`express serve running at http://localhost:${config.post}`);
+  console.log(`express serve running at ${config.host}:${config.post}`);
 })

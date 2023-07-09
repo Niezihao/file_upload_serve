@@ -1,10 +1,18 @@
+/*
+ * @Author: Niezihao 1332421989@qq.com
+ * @Date: 2023-07-06 21:30:34
+ * @LastEditors: Niezihao 1332421989@qq.com
+ * @LastEditTime: 2023-07-08 23:52:06
+ * @FilePath: \file_upload_server\src\multer\upload.js
+ */
 // 引入配置好的 multerConfig
 const multerConfig = require('./multerConfig')
 const path = require('path') 
 const fs = require('fs')
+const config = require('../../config')
 
 // 上传到服务器地址
-const BaseURL = 'http://localhost:3001' 
+const BaseURL = `${config.host}:{${config.post}}`
 // 上传到服务器的目录
 const imgPath = '/public/'
 
